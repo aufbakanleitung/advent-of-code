@@ -1,11 +1,9 @@
 # --- Day 2: Dive! ---
-import re
 
-moves = [re.split('[\s]', line.rstrip('\n')) for line in open("input/02_input.txt")]
+moves = [line.split() for line in open("input/02_input.txt").read().splitlines()]
 moves = [[move[0], int(move[1])] for move in moves]
-x = 0
-y = 0
-aim = 0
+x = y = aim = 0
+
 for move in moves:
     if move[0] == 'forward':
         x += move[1]
