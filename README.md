@@ -8,3 +8,8 @@ https://adventofcode.com/2021
 report = [int(line.rstrip('\n')) for line in open("input/01_input.txt")]
 ```
 
+* assignment 2 - Convert list of lists to correct filetypes using list comprehension
+
+```python
+moves = [[move[0], int(move[1])] for move in moves]
+```
