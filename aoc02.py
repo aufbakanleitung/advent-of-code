@@ -2,6 +2,7 @@
 
 moves = [line.split() for line in open("input/02_input.txt").read().splitlines()]
 moves = [[move[0], int(move[1])] for move in moves]
+
 x = y = aim = 0
 
 for move in moves:
