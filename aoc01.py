@@ -1,5 +1,7 @@
+# --- Day 1: Sonar Sweep ---
+
 test = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263]
-report = [int(line.rstrip('\n')) for line in open("input_aoc01.txt")]
+report = [int(line.rstrip('\n')) for line in open("input/01_input.txt")]
 count = 0
 
 for i in range(len(report)-3):

@@ -2,8 +2,9 @@
 https://adventofcode.com/2021
 
 ## Lessons learned:
-* assignment 1 - Load the input file on a single line using list comprehension 
+* assignment 1 - Load the input file on a single line using list comprehension
+
 ```python
-report = [int(line.rstrip('\n')) for line in open("input_aoc01.txt")]
+report = [int(line.rstrip('\n')) for line in open("input/01_input.txt")]
 ```
 
