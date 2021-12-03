@@ -1,13 +1,11 @@
 # --- Day 1: Sonar Sweep ---
 
-test = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263]
-report = [int(line.rstrip('\n')) for line in open("input/01_input.txt")]
+scans = [int(line) for line in open('input/01_input.txt').read().splitlines()]
+print(scans)
+
+# How many measurements are larger than the previous measurement?
 count = 0
-
-for i in range(len(report)-3):
-    window_a = report[i] + report[i+1] + report[i+2]
-    window_b = report[i+1] + report[i+2] + report[i+3]
-    if window_b > window_a:
+for i in range(len(scans)):
+    if scans[i] > scans[i-1]:
         count += 1
-
-print(count)
+print(f"Measurements larger than previous: {count}")
