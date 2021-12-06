@@ -74,15 +74,7 @@ for line in grid:
 Instead create a new list every time and append it to the list of lists.
 
 ```python
-grid2 = []
-for i in range(3):
-    grid2.append(list([0] * 3))
-
-for line in grid2:
-    print(id(line))
-# 4389060928
-# 4388674752
-# 4390320384
+grid2 = [[0] * 3 for _ in range(3)]
 ```
 
 Split and cast values over multiple variables using `map()`
