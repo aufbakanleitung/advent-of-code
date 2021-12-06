@@ -1,7 +1,7 @@
 ![](input/advent%20of%20code.jpg)
 # Advent of Code 2021: Python solutions
 https://adventofcode.com/2021
-
+∂∂
 ## Lessons learned:
 **Assignment 1** 
 
