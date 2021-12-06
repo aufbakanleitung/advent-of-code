@@ -1,20 +1,24 @@
 # --- Day 3: Binary Diagnostic ---
-lines = [line for line in open('input/03_example.txt').read().splitlines()]
+lines = open('input/03_input.txt').read().splitlines()
 
-# What is the power consumption of the submarine?
-gamma_rate = ''
-for pos in range(len(lines[0])):
-    common_counter = 0
-    for line in lines:
-        common_counter += int(line[pos])
-    gamma_rate += str(common_counter*2 // len(lines))
+count = [0] * len(lines[0])
 
-epsilon_rate = ''
-for bit in gamma_rate:
-    if bit == '0': epsilon_rate += '1'
-    if bit == '1': epsilon_rate += '0'
+for line in lines:
+    for i, c in enumerate(line):
+        if c == '1':
+            count[i] += 1
 
-print(f"Gamma rate: {gamma_rate}\n"
-      f"Epsilon rate: {epsilon_rate}\n"
-      f"Power consumption: {int(gamma_rate, base=2) * int(epsilon_rate, base=2)} ")
+gamma = epsilon = 0
+for i in range(len(lines[0])):
+    gamma <<= 1
+    epsilon <<= 1
+    if count[i] > len(lines) // 2:
+        gamma += 1
+    else:
+        epsilon += 1
+    # print(f"Epsilon: {bin(epsilon)}")
 
+print(f"What is the power consumption of the submarine?\n"
+      f"Gamma: {gamma}\n"
+      f"Epsilon: {epsilon}\n"
+      f"Power: {gamma * epsilon}")
