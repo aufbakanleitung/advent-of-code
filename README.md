@@ -48,7 +48,7 @@ for board in boards:
 ```
 
 Instead, make a separate list/set/dict to store removed values and check for them in for-loop.
-Also consider using an enumerator to store indexes instead of entire boards for efficiency.
+Also consider using an enumerator to store indexes instead of entire datasets for efficiency.
 ```python
 done_boards = set()
 for index, board in enumerate(boards):
@@ -85,7 +85,7 @@ for line in grid2:
 # 4390320384
 ```
 
-Beautifully split values over multiple values using `map()`
+Split and cast values over multiple variables using `map()`
 ```python
 x1, y1 = map(int, var.split(','))
 ```
