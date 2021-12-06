@@ -10,11 +10,11 @@ fish_age = count_fish(school)
 
 
 def next_day():
-    zero_fish = fish_age[0]
+    new_fish = fish_age[0]
     for c in range(0, 8):
         fish_age[c] = fish_age[c+1]
-    fish_age[8] = zero_fish
-    fish_age[6] += zero_fish
+    fish_age[8] = new_fish
+    fish_age[6] += new_fish
 
 
 def simulate(days):

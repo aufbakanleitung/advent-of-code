@@ -1,6 +1,5 @@
 # --- Day 3: Binary Diagnostic ---
 lines = open('input/03_input.txt').read().splitlines()
-
 count = [0] * len(lines[0])
 
 for line in lines:

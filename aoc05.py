@@ -1,6 +1,4 @@
 # --- Day 5: Hydrothermal Venture ---
-from pprint import pp
-
 lines = open('input/05_input.txt').read().splitlines()
 
 # Generate grid, don't make my mistake to append list-references: [[0] * len(lines[0])] * len(lines)
@@ -25,7 +23,6 @@ for line in lines:
         for i in range(min(y1, y2), max(y1, y2)+1):
             points[(i, x1)] = points.get((i, x1), 0) + 1
             # grid[i][x1] += 1
-# pp(grid)
 
 # At how many points do at least two lines overlap?
 overlap_count = 0
@@ -33,5 +30,3 @@ for i in points.items():
     if i[1] >= 2:
         overlap_count += 1
 print(overlap_count)
-# pp(points)
-

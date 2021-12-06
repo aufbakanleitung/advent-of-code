@@ -1,13 +1,7 @@
-# --- Day 3: Binary Diagnostic ---
+# --- Day 3b: Binary Diagnostic ---
 lines = [line for line in open('input/03_example.txt').read().splitlines()]
-print(lines)
 
 # What is the life support rating of the submarine?
-for line in lines:
-    for nr in range(len(lines)):
-        pass
-
-
 oxygen = CO2 = 0
 def counter(lines):
     count = [0] * len(lines[0])

@@ -1,5 +1,5 @@
+# --- Day 1b: Sonar Sweep ---
 scans = [int(line) for line in open('input/01_input.txt').read().splitlines()]
-print(scans)
 
 # three-measurement sliding window
 count = 0
