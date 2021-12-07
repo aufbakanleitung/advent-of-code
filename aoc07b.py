@@ -5,7 +5,8 @@ fuel_dict = {}
 for align in range(max(positions)):
     fuel = 0
     for pos in positions:
-        fuel += (abs(align - pos) ** 2 + abs(align - pos)) // 2  # triangle number (n^2+2)/2)
+        diff = abs(align - pos)
+        fuel += (diff ** 2 + diff) // 2  # triangle number (n^2+n)/2)
     fuel_dict[align] = fuel
 
 # How much fuel must they spend to align to that position?

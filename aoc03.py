@@ -11,6 +11,8 @@ gamma = epsilon = 0
 for i in range(len(lines[0])):
     gamma <<= 1
     epsilon <<= 1
+    print(bin(gamma))
+    print(bin(epsilon))
     if count[i] > len(lines) // 2:
         gamma += 1
     else:
