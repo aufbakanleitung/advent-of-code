@@ -1,7 +1,7 @@
 ![](input/advent%20of%20code.jpg)
 # Advent of Code 2021: Python solutions
 https://adventofcode.com/2021
-∂∂
+
 ## Lessons learned:
 ### Assignment 1 
 
@@ -78,4 +78,11 @@ grid2 = [[0] * 3 for _ in range(3)]
 Split and cast values over multiple variables using `map()`
 ```python
 x, y = map(int, var.split(','))
+```
+
+### Assignment 13
+Print a list as a string so it looks more compact.
+```python
+for line in grid:
+    print(''.join(line))
 ```
