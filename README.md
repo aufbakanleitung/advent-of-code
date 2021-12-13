@@ -79,5 +79,5 @@ grid2 = [[0] * 3 for _ in range(3)]
 
 Split and cast values over multiple variables using `map()`
 ```python
-x1, y1 = map(int, var.split(','))
+x, y = map(int, var.split(','))
 ```
