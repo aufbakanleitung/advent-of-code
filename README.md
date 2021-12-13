@@ -40,7 +40,7 @@ Load first variable in one var and all subsequent variables in another with `*va
 numbers, *boards = open('input/04_input.txt').read().split('\n\n')
 ```
 
-Don't remove values from a list you're iterating over while iterating. This will cause the iterator to skip items.
+Don't remove values from a list you're iterating over while iterating. This will cause the iterator to skip items. For a set it is even prohibited and will throw this error `RuntimeError: Set changed size during iteration`
 ```python
 for board in boards:
     if check(board):
@@ -52,10 +52,8 @@ Also consider using an enumerator to store indexes instead of entire datasets fo
 ```python
 done_boards = set()
 for index, board in enumerate(boards):
-    if index in done_boards:
-        continue
-    if check(board):
-        done_boards.add(index)
+    if index in done_boards:  continue
+    if check(board):  done_boards.add(index)
 ```
 
 
@@ -79,5 +77,5 @@ grid2 = [[0] * 3 for _ in range(3)]
 
 Split and cast values over multiple variables using `map()`
 ```python
-x1, y1 = map(int, var.split(','))
+x, y = map(int, var.split(','))
 ```
