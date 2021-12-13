@@ -52,10 +52,8 @@ Also consider using an enumerator to store indexes instead of entire datasets fo
 ```python
 done_boards = set()
 for index, board in enumerate(boards):
-    if index in done_boards:
-        continue
-    if check(board):
-        done_boards.add(index)
+    if index in done_boards:  continue
+    if check(board):  done_boards.add(index)
 ```
 
 
