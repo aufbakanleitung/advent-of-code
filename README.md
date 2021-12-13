@@ -40,7 +40,7 @@ Load first variable in one var and all subsequent variables in another with `*va
 numbers, *boards = open('input/04_input.txt').read().split('\n\n')
 ```
 
-Don't remove values from a list you're iterating over while iterating. This will cause the iterator to skip items.
+Don't remove values from a list you're iterating over while iterating. This will cause the iterator to skip items. For a set it is even prohibited and will throw this error `RuntimeError: Set changed size during iteration`
 ```python
 for board in boards:
     if check(board):
