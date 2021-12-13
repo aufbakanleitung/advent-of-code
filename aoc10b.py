@@ -29,5 +29,5 @@ for line in lines:
 # and sort the scores. What is the middle score?
 # print(f"The corrupt lines sum to: {sum}")
 score_list.sort()
-print(score_list[len(score_list)//2])
+print(f"The middle score is: {score_list[len(score_list)//2]}")
 
