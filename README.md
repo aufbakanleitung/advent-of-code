@@ -86,3 +86,34 @@ Print a list as a string so it looks more compact.
 for line in grid:
     print(''.join(line))
 ```
+
+### Assignment 14
+Directly load a split line as a dictionary with dict comprehension
+```python
+lines = {x.split()[0]:x.split()[1] for x in lines.splitlines()}
+```
+
+It is common to count occurrences of certain values with a dict, e.g.: `{'x': 2, 'y': 3}` 
+Initialize a dict with the all the values set at 0 using `.fromkeys(x, 0)`, and get all the unique values with a `set()`
+```python
+pc = dict.fromkeys(set(lines), 0)
+```
+
+To time a function it is common to use a wrapper, which then uses a decorator. 
+A decorator is a function that takes a function as an argument.
+```python
+def decorator(func): 
+    def wrap(): 
+        func() 
+    return wrap 
+function_used = decorator(function_used)
+```
+A wrapper is a notation to replace this line `function_used = decorator(function_used)` with a more convenient `@decorator`
+```python
+@timer
+def run():
+    for _ in range(10):
+        sleep(.5)
+run()
+# Time required: 5034.56 ms
+```

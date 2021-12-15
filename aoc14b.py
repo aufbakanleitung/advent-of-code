@@ -21,23 +21,24 @@ def insert(pc):
 
 
 def count_letters(pc):
-    letters = dict.fromkeys(set('PHOSBSKBBBFSPPPCCCHNV'), 0)
+    letters = dict.fromkeys(set('PHOSBSKBBBFSPPPCCCHNV'), 0)  # A bit hacky
     letters[polymer[-1]] += 1  # add the last letter of the polymer, because else it isn't counted
     for i in pc:
         letters[i[0]] += pc[i]
-        # letters[i[1]] += pc[i]
     return letters
-print(count_letters({'CH': 1, 'HB': 1, 'NC': 1, 'NB': 1, 'BC': 1, 'CN': 1}))
+
 
 def plen(pc):
     return sum(pc.values()) + 1
 
-pc = count_pairs(polymer)
-# Do steps
-for i in range(40):
-    pc = insert(pc)
-    print(f"#{i+1} len: {plen(pc)}  count: {count_letters(pc)}\n {pc}")
+@timer
+def run():
+    pc = count_pairs(polymer)
+    # Do steps
+    for i in range(40):
+        pc = insert(pc)
+        print(f"#{i+1} length: {plen(pc)} \ncount: {count_letters(pc)}")
+    letters = count_letters(pc)
+    print("max-min difference: ",max(letters.values())-min(letters.values()))
 
-
-letters = count_letters(pc)
-print("max-min difference: ", max(letters.values()) - min(letters.values()))
+run()

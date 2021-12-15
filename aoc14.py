@@ -8,7 +8,6 @@ inserts = {insert.split(' -> ')[0]:insert.split(' -> ')[1] for insert in inserts
 def insert(poly):
     pl = poly[0]
     for i in range(len(poly)-1):
-        # print(f"pair: {poly[i]}{poly[i+1]}")
         pl += inserts.get(poly[i]+poly[i+1]) + poly[i+1]
     return pl
 
