@@ -1,16 +1,15 @@
 ![](input/advent%20of%20code.jpg)
-# Advent of Code 2021: Python solutions
+# Advent of Code 2021: Lessons learned
 https://adventofcode.com/2021
 
-## Lessons learned:
-### Assignment 1 
+## Assignment 1 
 
 Load the input file as integers on a single line using list comprehension
 ```python
 scans = [int(line) for line in open('input/01_input.txt').read().splitlines()]
 ```
 
-### Assignment 2 
+## Assignment 2 
 
 Convert list of lists to correct filetypes using list comprehension
 ```python
@@ -22,7 +21,7 @@ Initialize multiple variables with sequential equal signs
 x = y = aim = 0
 ```
 
-### Assignment 3 
+## Assignment 3 
 
 Use the binary left shift `<<` to append a binary variable without type conversion 
 ```python
@@ -32,7 +31,7 @@ for i in range(x):
 ```
 
 
-### Assignment 4
+## Assignment 4
 
 Load first variable in one var and all subsequent variables in another with `*var`
 
@@ -57,7 +56,7 @@ for index, board in enumerate(boards):
 ```
 
 
-### Assignment 5
+## Assignment 5
 
 Don't generate an empty (3x3) list of lists like below; the grid will contain 3 references to the same data item.
 ```python
@@ -80,14 +79,14 @@ Split and cast values over multiple variables using `map()`
 x, y = map(int, var.split(','))
 ```
 
-### Assignment 13
+## Assignment 13
 Print a list as a string so it looks more compact.
 ```python
 for line in grid:
     print(''.join(line))
 ```
 
-### Assignment 14
+## Assignment 14
 Directly load a split line as a dictionary with dict comprehension
 ```python
 lines = {x.split()[0]:x.split()[1] for x in lines.splitlines()}
@@ -108,7 +107,8 @@ def decorator(func):
     return wrap 
 function_used = decorator(function_used)
 ```
-A wrapper is a notation to replace this line `function_used = decorator(function_used)` with a more convenient `@decorator`
+A wrapper is a notation to replace this line `function_used = decorator(function_used)` 
+with a more convenient `@decorator`
 ```python
 @timer
 def run():
