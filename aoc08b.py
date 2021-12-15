@@ -1,5 +1,6 @@
 # --- Day 8: Seven Segment Search ---
 from pprint import pp
+from bidict import bidict
 
 segs = [line.split(" | ") for line in open('input/08_example.txt').read().splitlines()]
 seg_list = [[seg.split(' ') for seg in line.split(" | ")] for line in open('input/08_example.txt').read().splitlines()]
@@ -7,35 +8,40 @@ numbers = {}
 
 number_list = ['abcefg', 'cf', 'acdeg', 'acdfg', 'bcdf', 'abdfg', 'abdefg', 'acf', 'abcdefg', 'abcdfg']
 number_str = 'abcefg cf acdeg acdfg bcdf abdfg abdefg acf abcdefg abcdfg'
+req = (set(number_list))
+print(req)
 number_dict = {'a':8, 'b':6, 'c':8, 'd':7, 'e':4, 'f':9,  'g':7}
 def count_letters(seg):
     nr_dict = {}
+    nr_tuple_list = []
+    nrbidict = bidict()
     for l in 'abcdefg':
-        nr_dict[l] = seg.count(l)
-    return nr_dict
+        nrbidict = bidict({l: seg.count(l)})
+        nr_dict[seg.count(l)] = l
+        # nr_dict[l] = seg.count(l)
+        # nr_tuple_list.append((l, seg.count(l)))
+    return nr_dict, nrbidict
+print(count_letters(segs[0][0]))
 
-def get_keys(d, val):
-    return [k for k, v in d.items() if v == val]
-
-
-for seg in segs:
-    nr_dict = count_letters(seg[0])
-    print(nr_dict)
-    if nr_dict.values() == 4: # e
-        print(f"e:{get_keys(nr_dict, 4)}")
-    if nr_dict.values() == 6: # b
-        print(f"b:{get_keys(nr_dict, 6)}")
-    if nr_dict.values() == 7: # d/g
-        pass
-    if nr_dict.values() == 8: # a/c
-        pass
-    if nr_dict.values() == 9: # f
-        pass
-
+def run(segs):
+    for seg in segs:
+        nr_dict, nrbidict = count_letters(seg[0])
+        ltr_list = ['.'] * 7
+        if nr_dict.values() == 4:  # ee 4
+            pass
+        if nr_dict.values() == 6:  # bb 1
+            print(f"yo")
+        if nr_dict.values() == 7:  # d/g  3/6
+            pass
+        if nr_dict.values() == 8:  # a/c 0/2
+            pass
+        if nr_dict.values() == 9:  # ff 5
+            pass
+run(segs)
 
 def pattern(i, line):
     values = {}
-    for j, out in enumerate(line[1]):
+    for j, out in enumerate(line[0]):
         if len(out) == 2:
             # print(f"({i},{j}) nr 1: {out}")
             numbers[i,j] = '1'
@@ -53,7 +59,7 @@ def pattern(i, line):
             numbers[i,j] = '8'
             values['8'] = out
     print(values)
+pattern(0,seg_list[0])
 
-
-for i, line in enumerate(seg_list):
-    pattern(i, line)
+# for i, line in enumerate(seg_list):
+#     pattern(i, line)
