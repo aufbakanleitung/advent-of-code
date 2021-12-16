@@ -102,11 +102,13 @@ To time a function it is common to use a wrapper, which then uses a decorator.
 A decorator is a function that takes a function as an argument.
 ```python
 def decorator(func): 
-    def wrap(): 
-        func() 
+    def wrap(*args):  # take any arguments
+        result = func(*args)
+        return result
     return wrap 
-function_used = decorator(function_used)
+some_function = decorator(some_function)
 ```
+
 A wrapper is a notation to replace this line `function_used = decorator(function_used)` 
 with a more convenient `@decorator`
 ```python
