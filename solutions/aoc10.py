@@ -1,7 +1,7 @@
 # --- Day 10: Syntax Scoring ---
 from pprint import pp
 
-lines = open('input/10_example.txt').read().splitlines()
+lines = open('../input/10_example.txt').read().splitlines()
 state = []
 haakje_dict = {'(':')','{':'}','[':']','<':'>'}
 points = {')':3,']':57,'}':1197,'>':25137}

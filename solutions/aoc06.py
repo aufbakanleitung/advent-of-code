@@ -1,5 +1,5 @@
 # --- Day 6: Lanternfish ---
-school = [int(days) for days in open('input/06_input.txt').read().split(',')]
+school = [int(days) for days in open('../input/06_input.txt').read().split(',')]
 
 def count_fish(school):
     fish_age = {}

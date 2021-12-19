@@ -1,7 +1,7 @@
 # --- Day 14: Extended Polymerization ---
 from helpers import timer
 
-polymer, ins = open('input/14_input.txt').read().split('\n\n')
+polymer, ins = open('../input/14_example.txt').read().split('\n\n')
 ins = {insert.split(' -> ')[0]:insert.split(' -> ')[1] for insert in ins.splitlines()}
 pc = dict.fromkeys(ins, 0)
 
@@ -39,6 +39,6 @@ def run():
         pc = insert(pc)
         print(f"#{i+1} length: {plen(pc)} \ncount: {count_letters(pc)}")
     letters = count_letters(pc)
-    print("max-min difference: ",max(letters.values())-min(letters.values()))
+    print("max-min difference: ", max(letters.values())-min(letters.values()))
 
 run()

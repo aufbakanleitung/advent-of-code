@@ -1,7 +1,7 @@
 # --- Day 3b: Binary Diagnostic ---
 from pprint import pp
 
-lines = [line for line in open('input/03_example.txt').read().splitlines()]
+lines = [line for line in open('../input/03_example.txt').read().splitlines()]
 
 # What is the life support rating of the submarine?
 oxygen = CO2 = 0

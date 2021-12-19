@@ -1,7 +1,7 @@
 # --- Day 14: Extended Polymerization ---
 from helpers import timer
 
-polymer, inserts = open('input/14_input.txt').read().split('\n\n')
+polymer, inserts = open('../input/14_input.txt').read().split('\n\n')
 poly_list = [polymer]
 inserts = {insert.split(' -> ')[0]:insert.split(' -> ')[1] for insert in inserts.splitlines()}
 

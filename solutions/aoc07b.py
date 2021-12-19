@@ -1,5 +1,5 @@
 # --- Day 7: The Treachery of Whales ---
-positions = [int(days) for days in open('input/07_input.txt').read().split(',')]
+positions = [int(days) for days in open('../input/07_input.txt').read().split(',')]
 
 fuel_dict = {}
 for align in range(max(positions)):

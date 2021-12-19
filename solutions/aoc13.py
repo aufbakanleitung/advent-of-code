@@ -1,7 +1,7 @@
 # --- Day 13: Transparent Origami ---
 from pprint import pp
 
-coor, folds = open('input/13_input.txt').read().split('\n\n')
+coor, folds = open('../input/13_input.txt').read().split('\n\n')
 folds = [line.split()[2] for line in folds.splitlines()]
 pp(folds)
 

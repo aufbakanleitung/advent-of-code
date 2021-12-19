@@ -1,6 +1,6 @@
 # --- Day 11: Dumbo Octopus ---
 from pprint import pp
-lines = open('input/11_example.txt').read().splitlines()
+lines = open('../input/11_example.txt').read().splitlines()
 lines = [list(map(int, line)) for line in lines]
 y_size, x_size = len(lines), len(lines[0])
 pp(lines)

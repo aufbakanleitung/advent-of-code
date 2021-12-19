@@ -1,4 +1,4 @@
-numbers, *boards = open('input/04_input.txt').read().split('\n\n')
+numbers, *boards = open('../input/04_input.txt').read().split('\n\n')
 
 numbers = [int(n) for n in numbers.split(',')]
 boards = [line.split('\n') for line in boards]

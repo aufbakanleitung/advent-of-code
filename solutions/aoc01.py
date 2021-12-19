@@ -1,5 +1,5 @@
 # --- Day 1: Sonar Sweep ---
-scans = [int(line) for line in open('input/01_input.txt').read().splitlines()]
+scans = [int(line) for line in open('../input/01_input.txt').read().splitlines()]
 
 # How many measurements are larger than the previous measurement?
 count = 0

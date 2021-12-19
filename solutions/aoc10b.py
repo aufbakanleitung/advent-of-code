@@ -1,5 +1,5 @@
 # --- Day 10: Syntax Scoring ---
-lines = open('input/10_input.txt').read().splitlines()
+lines = open('../input/10_input.txt').read().splitlines()
 
 haakje_dict = {'(':')','{':'}','[':']','<':'>'}
 def not_corrupt(line):

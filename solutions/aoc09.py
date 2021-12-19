@@ -1,7 +1,7 @@
 # --- Day 9: Smoke Basin ---
 from pprint import pp
 
-area = [*map(list,open('input/09_input.txt').read().splitlines())]
+area = [*map(list,open('../input/09_input.txt').read().splitlines())]
 y_size, x_size = len(area), len(area[0])
 
 

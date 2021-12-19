@@ -2,8 +2,9 @@
 from pprint import pp
 from bidict import bidict
 
-segs = [line.split(" | ") for line in open('input/08_example.txt').read().splitlines()]
-seg_list = [[seg.split(' ') for seg in line.split(" | ")] for line in open('input/08_example.txt').read().splitlines()]
+segs = [line.split(" | ") for line in open('../input/08_example.txt').read().splitlines()]
+seg_list = [[seg.split(' ') for seg in line.split(" | ")] for line in open(
+    '../input/08_example.txt').read().splitlines()]
 numbers = {}
 
 number_list = ['abcefg', 'cf', 'acdeg', 'acdfg', 'bcdf', 'abdfg', 'abdefg', 'acf', 'abcdefg', 'abcdfg']

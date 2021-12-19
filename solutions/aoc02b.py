@@ -1,5 +1,5 @@
 # --- Day 2b: Dive! ---
-moves = [move.split() for move in open('input/02_input.txt').read().splitlines()]
+moves = [move.split() for move in open('../input/02_input.txt').read().splitlines()]
 moves = [[move[0], int(move[1])] for move in moves]
 
 

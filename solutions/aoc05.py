@@ -1,5 +1,5 @@
 # --- Day 5: Hydrothermal Venture ---
-lines = open('input/05_input.txt').read().splitlines()
+lines = open('../input/05_input.txt').read().splitlines()
 
 # Generate grid, don't make my mistake to append list-references: [[0] * len(lines[0])] * len(lines)
 grid = []
