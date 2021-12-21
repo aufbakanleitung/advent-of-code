@@ -1,6 +1,8 @@
 # --- Day 17: Trick Shot ---
 
 # min_x, max_x, min_y, max_y = 20, 30, -10,-5
+from solutions.helpers import timer,expanding_range_2d
+
 min_x, max_x, min_y, max_y = 207, 263, -115, -63
 
 
@@ -21,13 +23,17 @@ def hit(vx, vy, x=0, y=0):
 
 valids = []
 valid_ys = []
-for vx in range(18,max_x+1):
-    for vy in range(min_y-1,300):
-        if hit(vx, vy):
-            valids.append((vx, vy))
-            valid_ys.append(vy)
 
-print(valids)
+@timer
+def run():
+    # for vx, vy in expanding_range_2d(140, 0):
+    for vx in range(18,max_x+1):
+        for vy in range(min_y-1,300):
+            if hit(vx, vy):
+                valids.append((vx, vy))
+                valid_ys.append(vy)
+                print(len(valids), vx, vy)
+
 def highest(vy):
     x=0
     while vy >= 0:
@@ -35,8 +41,7 @@ def highest(vy):
         vy -= 1
     return x
 
+run()
+
 print('Highest Y position:', highest(max(valid_ys)))
 print('Distinct velocities:', len(valids))
-# Find the initial velocity that causes the probe to reach the highest y position,
-# and still eventually be within the target area after any step.
-# What is the highest y position it reaches on this trajectory?

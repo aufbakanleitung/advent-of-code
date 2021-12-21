@@ -45,9 +45,9 @@ def next(lines):
     return lines
 
 
-def string_print(grid):
+def string_print(grid, spacer=''):
     for line in grid:
-        print(''.join(str(x) for x in line))
+        print(spacer.join(str(x) for x in line))
     print()
 
 
