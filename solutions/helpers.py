@@ -1,3 +1,5 @@
+from itertools import count,chain
+import heapq
 from functools import wraps
 from time import time
 
@@ -12,26 +14,52 @@ def timer(func):
     return wrapper
 
 
+def shortest_path(grid):
+    y_size, x_size = len(grid),len(grid[0])
+    paths = [(0,0,0)]  # total, y, x
+    visited = [[0] * len(row) for row in grid]
+    while True:
+        total, y, x = heapq.heappop(paths)  # Get coordinates for lowest path
+        if visited[y][x]: continue
+        if (y, x) == (y_size - 1, x_size - 1):
+            return total
+        visited[y][x] = 1
+        for ny, nx in [(y+1, x), (y, x+1), (y-1, x), (y, x-1)]:  # prefer down and right
+            if not x_size > ny >= 0 <= nx < y_size: continue
+            if visited[ny][nx]: continue
+            heapq.heappush(paths, (total + grid[ny][nx], ny, nx))
+
+
 def string_print(grid, spacer=''):
     for line in grid:
         print(spacer.join(str(x) for x in line))
     print()
 
 
-class expanding_range_2d:
+def expanding_range(x0):
+    down = count(x0, -1)
+    up = count(x0 + 1)
+    return chain.from_iterable(zip(down, up))
 
-    def __init__(self, start_value1, start_value2):
-        self.start_value1 = start_value1
-        self.start_value2 = start_value2
 
-    def __iter__(self):
-        yield self.start_value1, self.start_value2
+def expanding_range_2d(x0, y0):
+    yield x0, y0
+    for radius in count(1):
+        for i in range(-radius, radius):
+            yield x0+i, y0-radius
+            yield x0+radius, y0+i
+            yield x0-i, y0+radius
+            yield x0-radius, y0-i
 
-        radius = 1
-        while True:
-            for i in range(-radius, radius):
-                yield self.start_value1+i, self.start_value2-radius
-                yield self.start_value1+radius, self.start_value2+i
-                yield self.start_value1+radius-i-1, self.start_value2+radius
-                yield self.start_value1-radius, self.start_value2+radius-i-1
-            radius += 1
+
+def expanding_manhattan_2d(x0, y0):
+    yield x0, y0
+    for radius in count(1):
+        for i in range(radius):
+            j = radius - i
+            yield x0+i, y0-j
+            yield x0+j, y0+i
+            yield x0-i, y0+j
+            yield x0-j, y0-i
+
+
