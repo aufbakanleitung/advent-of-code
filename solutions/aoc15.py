@@ -7,7 +7,7 @@ grid = [*map(list,open('../input/15_input.txt').read().splitlines())]
 grid = [list(map(int, line)) for line in grid]
 
 @timer
-def run(grid):
+def shortest_path(grid):
     y_size, x_size = len(grid),len(grid[0])
     paths = [(0,0,0)]
     visited = [[0] * len(row) for row in grid]
@@ -22,7 +22,7 @@ def run(grid):
             if visited[nx][ny]: continue
             heapq.heappush(paths, (total + grid[nx][ny], nx, ny))
 
-print(f"Shortest path: {run(grid)}")
+print(f"Shortest path: {shortest_path(grid)}")
 
 # --- Part Two ---
 grid2 = [[0] * len(row) * 5 for row in grid * 5]
@@ -37,4 +37,4 @@ for y in range(len(grid2)):
 
 # string_print(grid2, ' ')
 
-print(f"Full map shortest path: {run(grid2)}")
+print(f"Full map shortest path: {shortest_path(grid2)}")
