@@ -13,6 +13,13 @@ def timer(func):
         return result
     return wrapper
 
+def to_int(str_list):
+    for i, item in enumerate(str_list):
+        try:
+            str_list[i] = int(float(item))
+        except ValueError:
+            str_list[i] = item
+    return str_list
 
 def shortest_path(grid):
     y_size, x_size = len(grid),len(grid[0])
