@@ -119,3 +119,25 @@ def run():
 run()
 # Time required: 5034.56 ms
 ```
+
+## Assignment 15
+My first implementation of a Depth-first search (DFS): this is an algorithm for traversing or searching tree or graph data structures. The algorithm starts at the root node and explores as far as possible along each branch before backtracking. It uses a heap (`heapq`), which is a data type that efficiently stores the smallest value first, to store the path sum (and corresponding coordinates). It pops the lowest value from the heap and adds all 4 values around back to the heap and then repeats a the next lowest point. 
+
+This implementation only returns the path sum `total` and it doesn't store the actual path taken. 
+
+```python
+def shortest_path(grid):
+    y_size, x_size = len(grid),len(grid[0])
+    paths = [(0,0,0)]  # total, y, x
+    visited = [[0] * len(row) for row in grid]
+    while True:
+        total, y, x = heapq.heappop(paths)  # Get coordinates for lowest path
+        if visited[y][x]: continue
+        if (y, x) == (y_size - 1, x_size - 1):
+            return total
+        visited[y][x] = 1
+        for ny, nx in [(y+1, x), (y, x+1), (y-1, x), (y, x-1)]:  # prefer down and right
+            if not x_size > ny >= 0 <= nx < y_size: continue
+            if visited[ny][nx]: continue
+            heapq.heappush(paths, (total + grid[ny][nx], ny, nx))
+```
