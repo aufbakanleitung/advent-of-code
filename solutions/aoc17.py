@@ -1,5 +1,5 @@
 # --- Day 17: Trick Shot ---
-from solutions.helpers import timer,expanding_range_2d
+from helpers import timer
 
 # min_x, max_x, min_y, max_y = 20, 30, -10,-5
 min_x, max_x, min_y, max_y = 207, 263, -115, -63
