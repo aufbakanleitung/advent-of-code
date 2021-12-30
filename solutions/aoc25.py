@@ -2,7 +2,7 @@
 from copy import deepcopy
 from pprint import pp
 
-from solutions.helpers import string_print
+from solutions.helpers import string_print,timer
 
 lines = list(map(list,open('../input/25_input.txt').read().splitlines()))
 y_size, x_size = len(lines), len(lines[0])
@@ -26,11 +26,13 @@ def next(lines):
     return new_2
 
 
-for n in range(1000):
-    lines2 = next(lines)
-    if lines == lines2:
-        print(f"Stability achieved at step {n+1}:")
-        pp(lines)
-        break
-    lines = lines2
+@timer
+def run(lines):
+    for n in range(1000):
+        lines2 = next(lines)
+        if lines == lines2:
+            print(f"Stability achieved at step {n+1}:")
+            break
+        lines = lines2
 
+run(lines)
