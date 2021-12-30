@@ -1,8 +1,7 @@
 # --- Day 25: Sea Cucumber ---
 from copy import deepcopy
-from pprint import pp
 
-from solutions.helpers import string_print,timer
+from helpers import timer
 
 lines = list(map(list,open('../input/25_input.txt').read().splitlines()))
 y_size, x_size = len(lines), len(lines[0])

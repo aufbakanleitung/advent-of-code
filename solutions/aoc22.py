@@ -1,9 +1,8 @@
 # --- Day 22: Reactor Reboot ---
 # lines = [x.split(' ') for x in open('../input/22_example.txt').read().splitlines()]
 import re
-from pprint import pp
 
-from solutions.helpers import timer
+from helpers import timer
 
 lines = [list(filter(None, re.split(' |,|=|x|y|z|\.', a))) for a in open('../input/22_input1.txt').read().splitlines()]
 # bool = [n[0] for n in lines]

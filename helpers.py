@@ -43,6 +43,18 @@ def string_print(grid, spacer=''):
     print()
 
 
+def print_dict(im, spacer=''):  # Render image from dict with y,x coordinates
+    y_min,y_max = min([a[0] for a in im.keys()]),max([a[0] for a in im.keys()])
+    x_min,x_max = min([a[1] for a in im.keys()]),max([a[1] for a in im.keys()])
+
+    image = [['.'] * (x_max-x_min +1) for _ in range((y_max-y_min + 1))]
+    for y,x in im:
+        image[y-y_min][x-x_min] = im[(y,x)]
+
+    for line in image:
+        print(spacer.join(str(x) for x in line))
+    print()
+
 def expanding_range(x0):
     down = count(x0, -1)
     up = count(x0 + 1)
