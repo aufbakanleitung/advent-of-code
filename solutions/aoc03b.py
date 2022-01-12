@@ -46,16 +46,3 @@ for i in range(len(lines[0])):
     print(f"gamma: {gamma}")
 print(gamma)
 print(eps_remove)
-
-
-# for i in range(len(lines[0])):
-#     if count_most(lines, i):
-#         for lines in lines:
-#             gamma.
-#
-#     most, least = counter(lines)
-#     if line[i] != most[i]:
-#         print('remove')
-#         print(lines)
-#         lines.remove(line)
-# print(lines)
