@@ -1,6 +1,6 @@
 # --- Day 15: Chiton ---
 import heapq
-from helpers import timer
+from ..helpers import timer
 grid = [*map(list,open('../input/15_input.txt').read().splitlines())]
 grid = [list(map(int, line)) for line in grid]
 
