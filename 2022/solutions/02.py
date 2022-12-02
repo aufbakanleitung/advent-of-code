@@ -27,7 +27,6 @@ def count_b(m):
         if m[0] == 3: count += 1
     return count
 
-
 scores = []
 scores_b = []
 for m in moves:
