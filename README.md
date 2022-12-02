@@ -4,7 +4,7 @@ https://adventofcode.com/2022
 
 ## Assignment 1 
 
-Convert a list of strings to ints using `map()`, convert the resulting map-object back to list with `list()`.
+Convert a list of strings to ints using `map(int,[])`, convert the resulting map-object back to list with `list()`.
 ```python
 list(map(int,bag.split('\n')))
 ```
