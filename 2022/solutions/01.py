@@ -3,7 +3,7 @@ from helpers import timer
 
 @timer
 def main():
-    bags = open('../input/01_input.txt').read().split("\n\n")
+    bags = open('../input/01i.txt').read().split("\n\n")
     bags = [sum(list(map(int,bag.split('\n')))) for bag in bags]
 
     max_value = max(bags)
