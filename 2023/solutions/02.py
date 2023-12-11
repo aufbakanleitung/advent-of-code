@@ -4,9 +4,9 @@ from pprint import pprint
 
 lines = [items.strip() for items in open('../input/02.txt').read().splitlines()]
 lines = [re.split(':|,|;', line) for line in lines]
-max_color = {"red": 12, "green": 13, "blue": 14}
 
-def part_1(lines, max_color):
+def part_1(lines):
+    max_color = {"red": 12,"green": 13,"blue": 14}
     tot = 0
     for i, line in enumerate(lines):
         for item in line[1:]:
@@ -16,7 +16,7 @@ def part_1(lines, max_color):
                 break
         tot += i+1
     return tot
-# print(part_1(lines, max_color))
+print("Part 1:", part_1(lines))
 
 def part_2(lines):
     tot = 0
@@ -29,4 +29,4 @@ def part_2(lines):
         tot += min_color['red'] * min_color['green'] * min_color['blue']
     return tot
 
-print(part_2(lines))
+print("Part 2:", part_2(lines))
