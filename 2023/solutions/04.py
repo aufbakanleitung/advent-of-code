@@ -49,9 +49,9 @@ def part2(tickets):
     return(som)
 # print("Part 2:", part2(tickets))
 
-def part2_improved(input):
+def part2_improved(tickets):
     m = {}
-    for i,x in enumerate(input):
+    for i,x in enumerate(tickets):
         if i not in m:
             m[i] = 1
 
