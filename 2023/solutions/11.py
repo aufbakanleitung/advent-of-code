@@ -8,9 +8,6 @@ erows = [r for r, row in enumerate(grid) if all(x == "." for x in row)]
 ecols = [c for c, col in enumerate(zip(*grid)) if all(y == "." for y in col)]
 galaxies = [[r,c] for r, row in enumerate(grid) for c, ch in enumerate(row) if ch == "#"]
 
-print("erows:", erows, "ecols:", ecols)
-# print("galaxies:", galaxies)
-
 # Expand galaxy
 for i, (r,c) in enumerate(galaxies):
     for er in erows:
@@ -19,7 +16,6 @@ for i, (r,c) in enumerate(galaxies):
     for ec in ecols:
         if c > ec:
             galaxies[i][1] += 999999
-# print("galaxies:", galaxies)
 
 # Sum distances
 tot = 0
