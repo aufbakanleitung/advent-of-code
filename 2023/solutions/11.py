@@ -1,6 +1,5 @@
 #--- Day 11: Cosmic Expansion ---
 from itertools import combinations
-from pprint import pprint
 
 grid = open("../input/11.txt").read().splitlines()
 
