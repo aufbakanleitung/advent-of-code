@@ -1,4 +1,26 @@
 ![](input/advent%20of%20code.jpg)
+# Advent of Code 2024: Lessons learned
+https://adventofcode.com/2024
+
+## Assignment 2 
+Instead of for-loop, create iterators (like a list[] or a generator() ) and using the Python iterator build-ins, like:
+any(), all(), sum(), zip(), filter(), map(), reduce(), min(), max(), sorted(), reversed(), enumerate()
+
+```python
+if all(1 <= x <= 3 for x in delta) or all(-1 >= x >= -3 for x in delta):
+    count += 1
+```
+You can also create your own iterable by making a function:
+```python
+def safe(levels):
+    delta = [x - y for x, y in zip(levels, levels[1:])]
+    return all(1 <= x <= 3 for x in delta) or all(-1 >= x >= -3 for x in delta)
+
+if any(safe(line[:index] + line[index + 1:]) for index in range(len(line))):
+    count += 1
+```
+
+
 # Advent of Code 2022: Lessons learned
 https://adventofcode.com/2022
 

@@ -2,7 +2,7 @@
 from pprint import pprint
 import re
 
-lines = [items.strip() for items in open('../input/02e.txt').read().splitlines()]
+lines = [items.strip() for items in open('../input/02.txt').read().splitlines()]
 lines = [list(map(int, re.split(' ', line))) for line in lines]
 
 
@@ -25,6 +25,5 @@ count = 0
 for line in lines:
     if any(safe(line[:index] + line[index + 1:]) for index in range(len(line))):
         count += 1
-
-
+print(count)
 
