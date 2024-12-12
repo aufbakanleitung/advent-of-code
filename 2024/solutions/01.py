@@ -7,17 +7,17 @@ lines = [list(map(int, re.split('   ', line))) for line in lines]
 transposed = list(map(list, zip(*lines)))
 
 
-def a(transposed):
+def part_one(transposed):
     transposed[0].sort()
     transposed[1].sort()
     distance = 0
     for a in range(len(transposed[0])):
         distance += abs(transposed[1][a] - transposed[0][a])
     print(f"Total distance: {distance}")
-a(transposed)
+part_one(transposed)
+
 
 # --- Part Two ---
-
 product_sum = 0
 for x in transposed[0]:
     product_sum += x * transposed[1].count(x)
