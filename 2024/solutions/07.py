@@ -17,19 +17,31 @@ import re
 lines = [items.strip() for items in open('../input/07e.txt').read().splitlines()]
 lines = [list(map(int, re.split(' |: ', line))) for line in lines]
 
-def binary_string_all_ones(length):
-    return '1' * length
+# def binary_string_all_ones(length):
+#     return '1' * length
 
-def valid(line):
-    if len(line) < 2: return sum
-    if valid(line[1:]): line[1] * line[2]
+def valid(target, line):
+    if len(line) == 1: return sum
+    if target % line[0] == 0 and valid(target, line[1:]): return True
+    if target - line[0] > 0 and valid(target, line[1:]): return True
+    return False
+
+test =[3267, 81, 40, 27]
+print(3267 % 27)
+tar = 3267 // 27
+tar -= 40
+tar -= 81
+print(tar)
 
 
-for line in lines:
-    binary_str = binary_string_all_ones(len(line)-1)
-    for i in range(int(binary_str, 2)+1):
-        print(str(bin(i))[2:])
-        for i in str(bin(i))[2:]:
-            if 1 == 0: pass
-    # for nr in range(len(line)-1):
-    #     line[nr] + line[nr+1]
+valid(test[0], test[1:])
+
+#
+# for line in lines:
+#     binary_str = binary_string_all_ones(len(line)-1)
+#     for i in range(int(binary_str, 2)+1):
+#         print(str(bin(i))[2:])
+#         for i in str(bin(i))[2:]:
+#             if 1 == 0: pass
+#     # for nr in range(len(line)-1):
+#     #     line[nr] + line[nr+1]

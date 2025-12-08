@@ -1,6 +1,6 @@
 # --- Day 3: Mull It Over ---
 import re
-
+w
 example1 = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
 lines = open('../input/03.txt').read()
 mul_pattern = r'mul\((\d+),(\d+)\)'
